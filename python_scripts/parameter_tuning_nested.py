@@ -190,10 +190,10 @@ print(f"Accuracy on test set: {accuracy:.3f}")
 # of the grid-search procedure. This is often the case that models trained on a
 # larger number of samples tend to generalize better.
 #
-# In the code above, the selection of the best hyperparameters was done only on
-# the train set from the initial train-test split. Then, we evaluated the
-# generalization performance of our tuned model on the left out test set. This
-# can be shown schematically as follows
+# In the code above, as in some previous notebooks, the selection of the best
+# hyperparameters was done only on the train set from the initial train-test
+# split. Then, we evaluated the generalization performance of our tuned model on
+# the left out test set. This can be shown schematically as follows:
 #
 # ![Cross-validation tuning
 # diagram](../figures/cross_validation_train_test_diagram.png)
@@ -215,8 +215,8 @@ print(f"Accuracy on test set: {accuracy:.3f}")
 # ```
 #
 # However, this evaluation only provides us a single point estimate of the
-# generalization performance. As recall at the beginning of this notebook, it is
-# beneficial to have a rough idea of the uncertainty of our estimated
+# generalization performance. As recalled at the beginning of this notebook, it
+# is beneficial to have a rough idea of the uncertainty of our estimated
 # generalization performance. Therefore, we should instead use an additional
 # cross-validation for this evaluation.
 #
