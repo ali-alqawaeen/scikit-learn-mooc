@@ -152,11 +152,12 @@ print(f"Accuracy of the DecisionTreeClassifier: {test_score:.2f}")
 import numpy as np
 from matplotlib import cm
 
+classes = np.unique(tree.classes_)
 _, axs = plt.subplots(ncols=3, nrows=1, sharey=True, figsize=(12, 5))
 plt.suptitle("Predicted probabilities for decision tree model", y=1.05)
 plt.subplots_adjust(bottom=0.45)
 
-for idx, class_of_interest in enumerate(np.unique(tree.classes_)):
+for idx, class_of_interest in enumerate(classes):
     axs[idx].set_title(f"Class {class_of_interest}")
     disp = DecisionBoundaryDisplay.from_estimator(
         tree,
@@ -179,9 +180,7 @@ for idx, class_of_interest in enumerate(np.unique(tree.classes_)):
 
 ax = plt.axes([0.15, 0.14, 0.7, 0.05])
 plt.colorbar(
-    cm.ScalarMappable(norm=None, cmap="viridis"),
-    cax=ax,
-    orientation="horizontal",
+    cm.ScalarMappable(cmap="viridis"), cax=ax, orientation="horizontal"
 )
 _ = plt.title("Probability")
 
